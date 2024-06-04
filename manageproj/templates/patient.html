@@ -1,0 +1,40 @@
+{%  extends 'base.html'%}
+
+{%block title%}
+patient
+{% endblock%}
+{% block content %}
+<div class="container text-center " >
+
+<h1 class="text-center">Patient Details</h1>
+    <div class="alert alert-info" role="alert">
+  we have received your appointment request
+</div>
+
+<hr>
+<table class="table table-hover" id="example">
+    <thead>
+    <tr>
+        <th>Patient name</th>
+        <th>Patient phone</th>
+        <th>Patient email</th>
+        <th>Doctor name</th>
+        <th>Booking date</th>
+
+
+    </tr>
+    </thead>
+    <tbody>
+    {% for patient in patients %}
+    <tr>
+        <td>{{patient.name}}</td>
+        <td>{{patient.phone}} </td>
+        <td>{{patient.email}}</td>
+        <td>{{patient.doc_name}}</td>
+        <td>{{patient.booking_date}}</td>
+    </tr>
+    {% endfor%}
+    </tbody>
+</table>
+</div>
+{% endblock %}
